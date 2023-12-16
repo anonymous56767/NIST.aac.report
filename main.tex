@@ -1,17 +1,245 @@
 \documentclass{article}
 \usepackage{graphicx} % Required for inserting images
+\usepackage{array}
 
-\title{personal report}
-\author{Vedang Gotmare}
+\title{Report on Data Compiling Project for NIST Database}
+\author{Ashlesha Astronomy Club}
 \date{15 December 2023}
 
 \begin{document}
 
 \maketitle
 
-\section{Things i learned}
-is project se hamne kayi nayi chije siki for example pehli baar team me kaam karna academically is very wholesum but chije plan karna bhot important hota hai.humne kafi late shuru kiya but because of our efficient way of distributing the workload made this entire process enjoyable. mein ne ye sikhaki most of the compounds usually form in dust clouds of planetary nebulae of supernovae remnants since ye itne unstable compounds star system me toh nhi ban sakte. also ye pura analysis heavily dependent hai spectroscopy par and ham emission spectrum ke through is analysis ko conduct karte hai.temperature ko stephans law ke dwara nikala and since kuch clouds boht door hai toh redshift ko account me lekar kuch papers likhe hai.and jo most prominent compounds hai woh Sagittarius constellation me hai i.e galactic center region hai and hence makes sense ki boht active region and hence novae boht common hai
-\section{Things i did}
-meine LaTeX mein table banaya and formatting ki e.g. super-scripting and sub-scripting and around 30 research papers padhe.and iske through various telescopes par information padhi. and most of time mera data curate karne mein hi gaya.i debugged and wrote the code of LaTeX
+\section{Introduction}
+\par
+\indent 
+Interstellar space is occupied by gigantic clouds of gas, dust and cosmic rays. Gas clouds are composed of different phases dependent on the nature of the matter - ionic, molecular or atomic. They are studied to understand specific local dynamics of star formation, which gives insights into a galaxy's stellar life cycle[1]. Interstellar molecular gas clouds are studied through spectroscopic analysis of molecular transition frequencies, which allows physical and chemical reactions in the cloud to be analysed. Radio telescopes are used to scan interstellar gas clouds at frequencies that are characteristic of certain molecules' spectra[2], establishing observational data about their velocity and vibrational states[3].
+
+\par
+The most common elements found in interstellar gas clouds are hydrogen, followed by helium, with trace amounts of carbon, oxygen and nitrogen. Hydrogen and helium are mostly present due to primordial nucleosynthesis while heavier elements are formed during stellar life cycles, in stellar cores or in supernovae.[1] Unexpectedly, the chemical reaction rate in these clouds, which was thought to be extremely slow due to the low density and temperature, was observationally found to be much higher than expected, as organic molecules such as formaldehyde and vinyl alcohol were found in much larger quantities than was thought possible. This indicated the existence of gas-phase reactions unknown to Earth-based organic chemistry.[4] Heavier elements, mostly metals, are also studied quantitatively. Their presence and existence in compounds is used to develop new theories of metal formation, especially when their ratios are inexplicable through fusion alone.[4]
+
+\par
+The NIST Standard Reference Database presents a tabulation of every molecule thus discovered and stores them in order of empirical formula, along with relevant isotopic species, their reference number and the telescope(s) used for gathering raw data. A total of 151 species have thus been discovered[5], of which 134 have been identified by means of their microwave spectra[6] and 17 by means of infrared or ultraviolet spectra, alongside 8 additional species only found in comets.[7] In these tables, recent research papers detailing advanced astronomical studies of these specific molecules can be found. Having been studied for over a century, this database is a way for the relevant astronomical and astrophysical literature to be collected and updates as and when new papers are written. The present work is to provide accurate information on the rest frequencies and transition frequencies of each of the aforementioned molecular species[8].
+
+\section{Methodology}
+
+\par\indent
+The objective of this project was to compile some interesting and relevant data from this database into one place. Since this database consists of an advanced search function, which requires data, and a series of linked research papers, the actual data given by these papers is fairly inaccessible if required in large quantities. Since it is impossible to consolidate more than 150 research papers' worth of data in one place, we selected the following categories of information given in the majority of these academic reviews: place of research, transition frequencies observed, telescope(s) used to collect data, marked similarities to other molecular species, and interesting or uncommon points noted about the molecule in the study.
+
+\par
+As a majority of the papers in the database were available in PDF format or in HTML online, we considered employing a web-scraping LLM model to compile every single paper before sorting to get the data we needed. However, no single method would work for most of the papers, some of which were paywalled, some in foreign languages, and some simply unavailable to us. Considering our relative inexpertise in coding, the required data was simply retrieved manually.
+
+\par
+Alongside compiling the data for the species in the database, a scatter-plot has been made to show the transition frequencies of these species in comparison to each other, as well as the temperature of the surroundings, which is important information for the chemical reactions that determine the gas cloud's composition and stability.
+
+\par
+Here, we find that most of the studies took place in Orion A, Sagittarius B, the Taurus Molecular Cloud 1 or the envelope of the infrared star IRC +10216, which has been used for circumstellar studies[8]. Applicable radio telescopes are attached in a table to the database[9].
+
+
+\section{Table}
+ 
+  
+  \begin{tabular}{|m{3cm}|m{3cm}|m{3cm}|m{3cm}|}
+    \hline
+    Compound & Frequency & Location & Telescope \\
+    \hline
+    CHO^{+}  & 85-90GHz & Row 1, Col 3 & NRAO \\
+    HOC^{+}  & 89 GHz & Sgr B2  & FCRAO \\
+    HOCO^{+}& 10.6GHz 21.3GHz
+ & Sgr B2  & \\
+ AlNC & 251 to 131 GHz & IRC +10216  & IRAM 30\\
+ AlCl & 160 to 87 GHz & IRC +10216 & IRAM 30\\
+ AlF & 165 to 99 GHz & IRC +10216  & IRAM 30\\
+ NaCl & 170 to 91 GHz & IRC +10216  & IRAM 30\\
+ KCl & 161 to 100 GHz & IRC +10216  & IRAM 30\\
+ CF^+ & & Orion Bar region  & IRAM30 *KAO\\
+ CH & & Casseopeia A  & \\
+ CHN & 88.6 GHz ,86.3 GHz &  W3, Orion A, Sgr A, W49 & NRAO\\
+ CHNO & 88GHz & W51, Sgr B2  &NRAO\\
+ CHNS & 141 to 82 GHz & Sgr B2 &BLT* \\
+ C_{8}H and  C_7H & 84 to 31 GHz & IRC +10216  & IRAM,Nobeyama\\
+ C_{8}H^{-} & 18 to 12 GHz & TMC - 1  & NRAO\\
+ C_{9}HN & 10.5 GHz & Heiles' Cloud 2 & ARO, NRAO\\
+ C_{11}HN & 13.2 to 12.8 GHz & TMC -1  & \\
+ HF & 246 GHz & Sgr B  & *ISO\\
+ FeO & 153 GHz & Sgr B2  & IRAM 30 \\
+ LiH & 444GHz, 263 GHz & B0218+35  & IRAM 30 \\
+ HNO & 81.5 GHz & Sgr B2, NGC 2024 & NRAO 30 m  \\
+ HN_{2}^{+} & 93.174 GHz & & NRAO 11m \\
+ H_2S & 168.7 GHz& Sgr B2, NGC  & NRAO 11m \\
+  SSi (Silicon monosulfide  )& 108- 117 GHz & IRC+10216 Sgr B2    & NRAO 11m \\ 
+ O_2S (Sulfur dioxide )&S17-S08  83.688 GHz & CROMC & NRAO 11m \\
+  O_2S (Sulfur dioxide )&S35-S23  86.639GHz & CROMC & NRAO 11m \\
+   O_2S (Sulfur dioxide )&	735-826   97.702 GHz & CROMC & NRAO 11m \\
+   O_2 (Oxygen) & 487.249 GHz & Orion & \\
+O_2 (Oxygen) & 119 GHz & Oph A cloud & \\
+
+    
+   \hline
+  \end{tabular}
+  \caption{Summary table *-CROMC- central region of the orion molecular cloud *ISO-Long Wavelength Spectrometer of the Infrared Space Observatory *KAO-Kuiper Airborne Observatory *ARO-Algonquin Radio Observatory *BLT-Bell Labs Telescope}
+ 
+
+
+
+
+\begin{tabular}{|m{3cm}|m{3cm}|m{3cm}|m{3cm}|}
+\hline
+OSi(Silicon monoxide)&130.246 GHz&Sagittarius B2 &NRAO 11m\\
+OS(Sulfur monoxide )& 99.3 GHz &Orion A ,NGC 2024, NGC 2264, Heiles cloud 4 , Sgr B2, W51, DR 21 (OH) (W75 S), and possibly Sgr A &NRAO\\
+NSi(Silicon mononitride ) &218 GHz &IRC +10216 & NRAO 12 m \\
+NS(Nitrogen sulfide ) &115.16 GHz &Sgr B2 & 5 m Texas Millimeter Wave Observatory \\
+NO(Nitrogen oxide ) &150.2 and 150.5 GHz&Sgr B2 &NRAO 11 m \\
+OH (Hydroxyl) &834.301 MHz&Sagittarius B2 &140-foot NRAO \\
+N_2O(Nitrogen oxide) &75369.2 MHz&Sgr B2 &\\
+H_4Si (Silane) && IRC +10216&NRAO\\
+H_3O^+(Oxonium hydride) && GL2136, W33A&NRAO\\
+NH_3(Ammonia)&& galactic center&NRAO\\
+
+H_2CN && Sgr B2 &NRAO \\
+NH_2CN& 80-100GHz& Sgr B2  & NRAO  \\
+CH_3CH_2CN    & 41 GHz    & Orion Nebula   (OMC-1) and seven in Sgr B2   & NRAO  \\
+CH_2CHCH_3& 8 - 10 GHz  & TMC-1  & IRAM 30 m radio telescope      \\
+(CH_3)_2CO   & 82.9 GHz& Sgr B2   (N-LMH) & NRAO 12 m   \\
+CH_2CHCHO   & 18 GHz - 26   GHz & Sgr B2  & 100 m Green Bank Telescope (GBT)   \\
+C_3N   & 89-98GHz  & IRC + 10216       & \\
+C_3S& 40-46GHz  & TMC-1  & Nobeyama   radio observatory \\
+CH_2CCHCN   & 33 kHz  & TMC-1&         \\
+C_5H  & 2GHz   & IRC + 10216   & IRAM 30 m   radio telescope   \\
+C_5N    & 25GHz    & IRC + 10216& IRAM 30 m   radio telescope   \\
+C_6H    & 40.2GHz  & TMC-1    &    \\
+\hline
+\end{tabular}
+
+
+
+
+
+\begin{tabular}{|m{3cm}|m{3cm}|m{3cm}|m{3cm}|}
+\hline
+
+
+H_2C_6   & 18.8 GHz & TMC-1        & NASA’s DSN 70   m \\
+CH_3C_5N & 18.6GHz  & TMC-1      & MPIfR 100 m   telescope\\
+CH_3C_6H & 24GHz    & TMC-1    & Laboratory of   Astronomical Imaging at the University of Illinois\\
+Formic Acid (CH$_2$O$_2$) & 1638.805 MHz & Sgr B2 & 140 foot telescope at NRAO \\
+        (CH$_2$S) Methanethial & 3139.38 MHz & Sgr B2 & Parkes 64m with 9cm parametric receiver \\
+        
+        Methanimine  & 5.290 GHz & Sgr B2 & Parkes 64m with 6cm cryogenic parametric receiver \\
+        
+        Formamide  &  4620 MHz & Sgr B2 and possibly Sgr A & 140 foot telescope at NRAO \\
+        
+        Hydroxy Methylium Ion  &  132 GHz & Sgr B2, Orion KL, W51, NGC 7538, DR21(OH)  Six transitions in Sgr B2& \\
+        
+        Methanol  & 834 MHz & Sgr A and Sgr B2 & 140 foot telescope at NRAO \\
+        
+        Methanamine  & 8777.38 MHz & Sgr B2 and Orion A & Parkes 64m telescope \\
+        
+        Magnesium Cyanide  & & Late-type star IRC +10216 & NRAO 12m and IRAM 30m telescope \\
+        
+        Magnesium Isocyanide  & & IRC +10216 & IRAM Plateau de Bure Interferometer \\
+        
+        Cyanogen & 113492 MHz & Orion Nebula (W51)  & NRAO 36-foot Paraboloid \\
+        
+        Sodium Cyanide & 77836.7 MHz - 138652.1MHz & IRC +10216 & NRAO 12m telescope   \\
+        
+        Silicon Cyanide &  80-116 GHz & IRC+10216/CW Leo  & IRAM 30m telescope \\
+        
+        Silicon Isocyanide & 12.8 GHz & IRC +10216 & IRAM 30m telescope  Radical along with HCN, HC3N, H2, etc. \\
+        
+        Carbon Monoxide & 115267.2 MHz & Orion Nebula  & NRAO 36-foot Paraboloid \\
+        
+        Carbon Oxide Sulfide & 19.5 GHz & Sgr B Molecular Cloud  & 36-foot NRAO \\
+        \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{tabular}{|m{3cm}|m{3cm}|m{3cm}|m{3cm}|}
+\hline
+        
+        Carbon Monophosphide & 1-2 MHz& IRC +10216 & IRAM 30m telescope  \\
+        
+        Carbon Monosulphide & 48991 MHz - 146969.2 MHz & Orion A, M17, Interstellar Space  & 16-foot telescope MWO \\
+        
+        Silicon Monocarbide & 157 GHz to 276 GHz & IRC +10216 & NRAO 36-foot telescope  \\
+        
+        Ethynyl  & 87.3 GHz & KL Nebula in Orion & 36-foot NRAO \\
+        
+        Cyanomethylene & 110 GHz  & IRC 10216, Sgr B2, Orion A & IRAM 30m telescope \\
+        
+        Cyanoformaldehyde & 8.6 GHz - 41.3 GHz & Sgr B2 & 100m Green Bank telescope  \\
+        
+        Ethenone & 81.5 GHz to 102 GHz & Sgr B2  & NRAO 36-foot \\
+        
+        Isocyanomethane  & 140733 MHz& Sgr B2 & IRAM 30m telescope  \\
+        
+        Keteneimine & 4.9 GHz - 41.5 GHz & Sgr B2  &  NRAO 100m GB telescope \\
+        
+        Acetaldehyde & 8.8 GHz to 50 GHz & IRC +10216& IRAM 30m telescope   \\
+        
+        
+        
+        Acetic Acid  & 90.2 GHz & Sgr B2 & NRAO 12m telescope \\
+        
+        Hydroxy Acetaldehyde & & Sgr B2 and W51  & NRAO 12m telescope \\
+        
+        Dimethyl Ether  & 31.1 GHz to 90.0 GHz & Orion Nebula & 36ft NRAO telescope \\
+        
+        Ethylene Glycol  & 75 GHz to 93 GHz & Sgr B2 & NRAO 12m telescope \\
+        
+        
+        
+        Phosphaethenylidene & 120-413 GHz & IRC +10216  &  12m ARO telescope \\
+        
+        Thioxoethenylidene & less than 300 GHz & IRC +10216  & 45m telescope at NRO \\
+        
+        Silicon Carbide & 138 GHz & IRC 10216 & NRAO 11m telescope  \\
+        
+        Ethyne Isocyanide  & 89.4194 GHz   & Detected in TMC-1& 45m NRO telescope \\
+        
+        Cyclopropenylidene & 18.34 GHz & IRC +10216& 140ft NRAO telescope  \\
+        
+        
+        
+        Cyclopropenone & 1.8GHz to 44.5GHz & Sgr B2& 100m Green Bank telescope    \\
+        
+        Vinyl Cyanide & 1372 MHz & Sgr B2  & Parkes 64m telescope \\
+        
+       
+
+
+\hline
+\end{tabular}
+\\ \\ \\
+
+
+\section{Conclusion}
+In conclusion, the research project represents a comprehensive compilation and analysis of data extracted from numerous research papers focused on the observation of molecular transitions within interstellar space. The primary objective was to consolidate valuable information from the NIST Standard Reference Database, focusing on the intricate dynamics of interstellar molecular gas clouds and species embedded within them.
+
+Through thorough examination, it is evident that the study of interstellar molecular gas clouds is a sophisticated field that significantly contributes to our understanding of astrophysical processes. The use of radio telescopes to conduct spectroscopic analyses has enabled researchers to study the various phases of gas clouds, including ionic, molecular, and atomic compositions.
+
+A noteworthy revelation in this study is the unexpected prevalence of organic molecules, such as formaldehyde and vinyl alcohol, challenging preconceived notions about the chemical reactivity within these low-density and low-temperature environments. This discovery underscores the existence of gas-phase reactions not previously recognized by terrestrial organic chemistry.
+
+The database, precisely curated from over a large data obtained from research, contains a rich repository of 151 molecular species, offering insights into the chemical makeup of interstellar gas clouds. Hydrogen and helium, products of primordial coalescence's, dominate, while heavier elements, especially metals, provide crucial information for developing theories on their formation, particularly when fusion alone cannot account for their observed ratios.
+
+The tables presented in this report showcases the transition frequencies of various molecular species, providing an understanding of their properties. The selected locations for studies, including Orion A, Sagittarius B, Taurus Molecular Cloud 1, and the envelope of the infrared star IRC +10216, demonstrate the significance of these regions in advancing our knowledge of interstellar molecular composition.
+
+In essence, this project contributes to the ongoing dialogue in the astronomical and astrophysical community by providing accessible source of information. The concised data and analyses shown here serves a valuable resource for researchers, allowing for exploration and refinement of understanding the molecular intricacies within interstellar space. As the field progresses, this compilation will remain an essential reference, thriving the continued advancements in the study of vast and enigmatic universe.
+\\ \\ \\ \\ \\ \\ 
+
+
+\section{References}
+
+1.https://en.wikipedia.org/wiki/Interstellar/medium \\
+2.https://en.wikipedia.org/wiki/Interstellar/cloud/Chemical/compositions\\
+3.https://www.nist.gov/pml/observed-interstellar-molecular-microwave-transitions\\
+4.https://en.wikipedia.org/wiki/Interstellar/cloud/Unexpected/chemicals/detected/in/interstellar/clouds    \\  
+5.https://www.nist.gov/pml/observed-interstellar-molecular-microwave-transitions/observed-interstellar-molecular-microwave\\
+6.https://www.nist.gov/pml/observed-interstellar-molecular-microwave-transitions/observed-interstellar-molecular-3\\
+7.https://www.nist.gov/pml/observed-interstellar-molecular-microwave-transitions/observed-interstellar-molecular-4\\
+8.https://www.nist.gov/pml/observed-interstellar-molecular-microwave-transitions/observed-interstellar-molecular-0\\
+9.https://www.nist.gov/pml/observed-interstellar-molecular-microwave-transitions/observed-interstellar-molecular-5\\ \\ \\
 
 \end{document}
